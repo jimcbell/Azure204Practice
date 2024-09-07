@@ -9,11 +9,14 @@ IConfiguration configuration = new ConfigurationBuilder()
     .AddUserSecrets<Program>()
     .AddJsonFile("appsettings.json")
     .Build();
+// Get name of the container
+string containerName = configuration["ContainerName"] 
+    ?? throw new Exception("Json File Improperly Set Up");
 // Get my storage account connection string.
 string connectionString = configuration["StorageAccountConnectionString"]
-    ?? throw new Exception("Secret Management Impoperly Set Up");
+    ?? throw new Exception("Secret Management Improperly Set Up");
 // Not disposable.
-BlobContainerClient client = new(connectionString, "test");
+BlobContainerClient client = new(connectionString, containerName);
 if (client.CanGenerateSasUri)
 {
     foreach (BlobItem item in client.GetBlobs())
