@@ -4,7 +4,7 @@ using Azure.Storage.Blobs.Specialized;
 
 partial class Program
 {
-    public async Task CopyFromBlob(string connectionString, 
+    static async Task CopyFromBlob(string connectionString, 
         string sourceContainer, 
         string destContainer, 
         string sourceFile, 

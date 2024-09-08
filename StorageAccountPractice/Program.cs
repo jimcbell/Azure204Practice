@@ -24,5 +24,5 @@ string connectionString = configuration["StorageAccountConnectionString"]
 EnumerateSasUrls(srcContainer, connectionString);
 
 // Partial method to copy blob contents
-CopyFromBlob(connectionString, srcContainer, destContainer, srcFile, destFile);
+await CopyFromBlob(connectionString, srcContainer, destContainer, srcFile, destFile);
 
