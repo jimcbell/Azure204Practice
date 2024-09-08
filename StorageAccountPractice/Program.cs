@@ -24,7 +24,10 @@ string connectionString = configuration["StorageAccountConnectionString"]
 //EnumerateSasUrls(srcContainer, connectionString);
 
 // Partial method to copy blob contents
-await CopyFromBlob(connectionString, srcContainer, destContainer, srcFile, destFile);
+//await CopyFromBlob(connectionString, srcContainer, destContainer, srcFile, destFile);
+
+// Partial method to set blob metadata
+await SetMetadata(connectionString, srcContainer, srcFile);
 
 Console.WriteLine("Done!");
 
