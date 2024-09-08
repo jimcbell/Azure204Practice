@@ -21,8 +21,10 @@ string connectionString = configuration["StorageAccountConnectionString"]
     ?? throw new Exception("Secret Management Improperly Set Up");
 
 // Partial program method to list out the storage account urls.
-EnumerateSasUrls(srcContainer, connectionString);
+//EnumerateSasUrls(srcContainer, connectionString);
 
 // Partial method to copy blob contents
 await CopyFromBlob(connectionString, srcContainer, destContainer, srcFile, destFile);
+
+Console.WriteLine("Done!");
 
