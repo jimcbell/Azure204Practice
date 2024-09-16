@@ -13,7 +13,7 @@ IConfiguration configuration = new ConfigurationBuilder()
 string connectionString = configuration.GetAppSetting("CosmoDbConnection");
 string primaryKey = configuration.GetAppSetting("CosmoPrimaryKey");
 
-CosmoManager manager = new CosmoManager(connectionString);
+CosmoDatabaseManager manager = new CosmoDatabaseManager(connectionString);
 await manager.CreateDatabaseIfNotExistAsync("testdatabase1");
 
 
