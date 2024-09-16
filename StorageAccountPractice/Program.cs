@@ -1,8 +1,5 @@
-﻿using Azure.Storage.Blobs;
-using Azure.Storage.Blobs.Models;
-using Azure.Storage.Sas;
+﻿using Az204Common.Extensions;
 using Microsoft.Extensions.Configuration;
-using StorageAccountPractice.Extensions;
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 
