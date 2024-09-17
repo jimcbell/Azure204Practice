@@ -1,11 +1,7 @@
 ﻿using Microsoft.Azure.Cosmos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Azure.Cosmos.Scripts;
 
-namespace CosmoDbPractce
+namespace CosmoDbPractice.Managers
 {
     public class CosmoContainerManager
     {
@@ -33,5 +29,7 @@ namespace CosmoDbPractce
         public async Task<ContainerProperties> GetContainerProperties(string containerId) => await _database.GetContainer(containerId).ReadContainerAsync();
         // Delete Containers
         public async Task DeleteContainer(string containerId) => await _database.GetContainer(containerId).DeleteContainerAsync();
+
+        
     }
 }
